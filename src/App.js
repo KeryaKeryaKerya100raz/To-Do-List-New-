@@ -1,23 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './Components/Header/Header';
+import Add from './Components/Add/Add';
+import React, { useState } from 'react';
+import TodoItem from './Components/Todoitem/TodoItem';
+import SwipeableTemporaryDrawer from './Components/SwipeableTemporaryDrawer/SwipeableTemporaryDrawer';
+
+
 
 function App() {
+  
+  const [todo, setTodo] = useState([
+    {
+      id: 1,
+      title: 'eref',
+      status: true,
+      date: 222
+    },
+    {
+      id: 2,
+      title: 'dfdfdfs',
+      status: true,
+      date: 222
+    },
+    {
+      id: 3,
+      title: 'sfdfsd',
+      status: true,
+      date: 222
+    },
+
+  ])
+  
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='All'>
+      <SwipeableTemporaryDrawer todo={todo} setTodo={setTodo} />
+        <div className='body'>
+          <Header todo={todo}/>
+          {/* <Add todo={todo} setTodo={setTodo} /> */}
+          <TodoItem todo={todo} setTodo={setTodo} />
+        </div>
     </div>
   );
 }

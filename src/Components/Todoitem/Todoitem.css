@@ -1,0 +1,40 @@
+.filter {
+    display: flex;
+    justify-content: center; 
+    margin: auto;
+    
+}
+
+.Items {
+    position: relative;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+
+}
+
+.paper {
+    height: 100px;
+    max-width: 200px;
+    overflow: hidden;
+    font-size: large;
+}
+
+.items {
+    padding: 5px 10px;
+}
+
+.off {
+    text-decoration: line-through;
+}
+
+.date {
+    font-size: small;
+    text-align: center;
+    color: rgb(151, 151, 161);
+}
+
