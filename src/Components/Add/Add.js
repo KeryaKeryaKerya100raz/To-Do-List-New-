@@ -6,15 +6,15 @@ import Fab from '@mui/material/Fab';
 import AddIcon from '@mui/icons-material/Add';
 
 
-function Add({todo, setTodo}) {
+function Add({todos, setTodos}) {
   
     const [value, setValue] = useState("")
     const date = new Date().toLocaleTimeString();
     
     function addTodo(event) {
         event.preventDefault()
-        setTodo(
-            [...todo, {
+        setTodos(
+            [...todos, {
                 id: uuidv4(),
                 title: value,
                 status: true,

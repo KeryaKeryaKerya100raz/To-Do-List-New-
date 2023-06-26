@@ -1,5 +1,4 @@
 import Header from './Components/Header/Header';
-import Add from './Components/Add/Add';
 import React, { useState } from 'react';
 import TodoItem from './Components/Todoitem/TodoItem';
 import SwipeableTemporaryDrawer from './Components/SwipeableTemporaryDrawer/SwipeableTemporaryDrawer';
@@ -8,7 +7,7 @@ import SwipeableTemporaryDrawer from './Components/SwipeableTemporaryDrawer/Swip
 
 function App() {
   
-  const [todo, setTodo] = useState([
+  const [todos, setTodos] = useState([
     {
       id: 1,
       title: 'eref',
@@ -33,11 +32,10 @@ function App() {
   
   return (
     <div className='All'>
-      <SwipeableTemporaryDrawer todo={todo} setTodo={setTodo} />
+      <SwipeableTemporaryDrawer todos={todos} setTodos={setTodos} />
         <div className='body'>
-          <Header todo={todo}/>
-          {/* <Add todo={todo} setTodo={setTodo} /> */}
-          <TodoItem todo={todo} setTodo={setTodo} />
+          <Header todos={todos}/>
+          <TodoItem todos={todos} setTodo={setTodos} />
         </div>
     </div>
   );

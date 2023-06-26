@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Search from '../Search/Search';
 
 
-function SwipeableTemporaryDrawer({todo, setTodo, value, setValue}) {
+function SwipeableTemporaryDrawer({todos, setTodos, value, setValue}) {
   const [state, setState] = React.useState({
     left: false,
     
@@ -36,12 +36,12 @@ function SwipeableTemporaryDrawer({todo, setTodo, value, setValue}) {
       <List>
         <h2>Меню</h2>
         <h3>Добавить задачу</h3>
-        <div className='add'><Add todo={todo} setTodo={setTodo} value={value} setValue={setValue} /></div>
+        <div className='add'><Add todos={todos} setTodos={setTodos} value={value} setValue={setValue} /></div>
       </List>
       <Divider />
       <List className='search'>
         <h3>Найти задачу</h3>
-        <Search  todo={todo} setTodo={setTodo}/>
+        <Search  todos={todos} setTodos={setTodos}/>
       </List>
     </Box>
   );

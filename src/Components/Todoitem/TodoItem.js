@@ -9,18 +9,18 @@ import SendIcon from '@mui/icons-material/Send';
 import Paper from '@mui/material/Paper';
 
 
-function TodoItem({ todo, setTodo }) {
+function TodoItem({ todos, setTodos }) {
     
     const [edit, setEdit] = useState(null)
     const [value, setValue] = useState('')
-    const [filtred, setFiltred] = useState([...todo])
+    const [filtred, setFiltred] = useState([...todos])
     const [tab, setTab] = useState('all')
-    useEffect(filterTodo, [todo, tab])
+    useEffect(filterTodo, [todos, tab])
 
     
      function deleteTodo(id) {
-         let newTodo = [...todo].filter(item => item.id != id)
-         setTodo(newTodo)
+         let newTodos = [...todos].filter(item => item.id != id)
+         setTodos(newTodos)
      }
    
      function editTodo(id, title){
@@ -29,37 +29,37 @@ function TodoItem({ todo, setTodo }) {
      }
  
      function uraTodo(id){
-         let newTodo = [...todo].map(item => {
+         let newTodos = [...todos].map(item => {
              if(item.id == id) {
                  item.status = !item.status
              }
              return item
          })
-         setTodo(newTodo)
+         setTodos(newTodos)
      }
  
      function saveTodo(id) {
-         let newTodo = [...todo].map( item => {
+         let newTodos = [...todos].map( item => {
              if (item.id == id ) {
              item.title = value
              }
              return item
          })
-             setTodo(newTodo)
+             setTodos(newTodos)
              setEdit(null)
      }
  
      function filterTodo() {
-         let newTodo = []
+         let newTodos = []
          if(tab === 'all') {
-             console.log(todo, 'todo')
-             setFiltred([...todo])
+             console.log(todos, 'todo')
+             setFiltred([...todos])
          } else if (tab === 'active') {
-             newTodo = todo.filter(item => item.status)
-             setFiltred(newTodo)
+             newTodos = todos.filter(item => item.status)
+             setFiltred(newTodos)
          } else {
-             newTodo = todo.filter(item => !item.status)
-             setFiltred(newTodo)
+             newTodos = todos.filter(item => !item.status)
+             setFiltred(newTodos)
          }
      }
  

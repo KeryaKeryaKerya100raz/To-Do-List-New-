@@ -2,10 +2,10 @@ import React from 'react'
 import SwipeableTemporaryDrawer from '../SwipeableTemporaryDrawer/SwipeableTemporaryDrawer'
 
 
-function Header({todo}) {
+function Header({todos}) {
   return (
     
-    <h1>To Do List ({Object.keys(todo).length})</h1>
+    <h1>To Do List ({Object.keys(todos).length})</h1>
   )
 }
 

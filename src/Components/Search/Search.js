@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import './Search.css'
 
-function Search({todo}) {
+function Search({todos}) {
     const [value2, setValue2] = useState('')
-    const searchTodo = todo.filter(item => {
+    const searchTodo = todos.filter(item => {
         return item.title.toLowerCase().includes(value2.toLocaleLowerCase())
     })
 
